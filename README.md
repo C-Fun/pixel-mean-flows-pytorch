@@ -1,6 +1,6 @@
 # Pixel MeanFlow — PyTorch Fine-Tuning
 
-A third-party PyTorch train/eval pipeline reimplementation of [pixel MeanFlow (pMF)](https://arxiv.org/abs/2505.13447), faithfully ported from the [official JAX implementation](https://github.com/Lyy-iiis/pMF.git).
+A third-party PyTorch train/eval pipeline reimplementation of [One-step Latent-free Image Generation with Pixel Mean Flows (pixel MeanFlows / pMF)](https://arxiv.org/abs/2505.13447), faithfully ported from the [official JAX implementation](https://github.com/Lyy-iiis/pMF.git).
 
 This baseline fine-tunes the pretrained `pMF-B/16` checkpoint on small image datasets (CIFAR-10, STL-10, Oxford Flowers-102) for reproduction and ablation experiments.
 
