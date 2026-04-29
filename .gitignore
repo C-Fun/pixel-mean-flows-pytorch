@@ -1,0 +1,6 @@
+**/__pycache__/
+./tmp
+.DS_Store
+
+data_samples.py
+todo.md

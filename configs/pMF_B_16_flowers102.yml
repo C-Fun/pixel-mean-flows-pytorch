@@ -1,0 +1,54 @@
+model:
+  model_str: pmfDiT_B_16
+  img_size: 256
+  noise_scale: 1.0        # pMF-B/16
+
+  # logit-normal t/r sampling (pMF-B/16 config)
+  p_mean: 0.8
+  p_std: 0.8
+  data_proportion: 0.5    # fraction of batch with r=t (flow matching samples)
+
+  # CFG
+  cfg_max: 7.0
+  class_dropout: 0.1
+
+  # adaptive loss weighting
+  norm_p: 1.0
+  norm_eps: 0.01
+
+  # perceptual auxiliary losses
+  lpips: true
+  lpips_lambda: 0.4
+  convnext: true
+  convnext_lambda: 0.1
+  perceptual_max_t: 0.8
+
+dataset:
+  name: flowers102
+  num_classes: 102
+  data_root: ./data
+
+checkpoint:
+  hf_repo_id: Lyy0725/pMF
+  hf_filename: pMF-B-16.pt
+
+training:
+  batch_size: 32
+  lr: 1.0e-3
+  adam_b2: 0.95
+  train_steps: 100000
+  log_every: 100
+  sample_every: 1000
+  ckpt_every: 5000
+  ema_type: 'edm'
+  ema_val: [500, 1000, 2000]
+
+sampling:
+  num_steps: 1
+  omega: 8.5
+  t_min: 0.1
+  t_max: 0.7
+
+logging:
+  wandb_project: pmf-flowers102
+  wandb_run_name: pMF-B-16-flowers102
