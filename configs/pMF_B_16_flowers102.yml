@@ -33,7 +33,7 @@ checkpoint:
   hf_filename: pMF-B-16.pt
 
 training:
-  batch_size: 32
+  batch_size: 8
   lr: 1.0e-3
   adam_b2: 0.95
   train_steps: 100000
